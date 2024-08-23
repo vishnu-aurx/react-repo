@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import './LoginWithOTP.css'; // Import the CSS file for animation
+import './LoginWithOTP.css'; 
+import NavBar from './NavBar';
 
 function LoginWithOTP() {
     const [username, setUsername] = useState('');
@@ -35,6 +36,7 @@ function LoginWithOTP() {
 
     return (
         <div className="login-container">
+             <NavBar />
             <h2 className="login-title">Login</h2>
             <form 
                 className={`login-form ${otpSent ? 'otp-sent' : ''}`} 

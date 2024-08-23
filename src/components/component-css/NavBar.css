@@ -1,0 +1,52 @@
+/* NavBar.css */
+
+.navbar {
+    background-color: #007bff; /* Primary color for NavBar */
+    padding: 10px 20px;
+    color: white;
+    display: flex;
+    justify-content: space-between; /* Space between brand and buttons */
+    align-items: center;
+    width: 100%; /* Full width */
+    box-sizing: border-box; /* Include padding in width calculation */
+    position: fixed; /* Fix the NavBar at the top */
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Ensure it stays on top of other content */
+  }
+  
+  .navbar-brand {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .navbar-actions {
+    display: flex;
+    gap: 15px; /* Space between buttons */
+  }
+  
+  .nav-button {
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+    padding: 8px 16px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    text-transform: uppercase; /* Capitalize button text */
+  }
+  
+  .nav-button:hover {
+    background-color: white;
+    color: #007bff;
+  }
+  
+  /* Content area below NavBar */
+  .content {
+    margin-top: 60px; /* Adjust based on NavBar height */
+    padding: 20px;
+    background-color: white; /* Background color for content */
+    min-height: 100vh; /* Full height to cover the viewport */
+  }
+  

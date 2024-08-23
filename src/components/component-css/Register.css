@@ -1,34 +1,54 @@
-/* LoginWithOTP.css */
+/* Register.css */
 
-.login-container {
+/* Container for the register form */
+.register-container {
     width: 300px;
     margin: 100px auto;
     padding: 20px;
     background: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
+    animation: slideIn 0.8s ease-out; /* Animation for sliding in */
 }
 
-.login-title {
+/* Animation for sliding in */
+@keyframes slideIn {
+    from {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Title styling */
+.register-title {
     text-align: center;
     margin-bottom: 20px;
     font-size: 24px;
     color: #333;
 }
 
-.login-form {
+/* Form styling */
+.register-form {
     display: flex;
     flex-direction: column;
 }
 
+/* Grouping for form fields */
 .form-group {
     margin-bottom: 15px;
+    animation: fadeInUp 0.6s ease-in-out;
 }
 
+/* Fade-in effect for OTP input */
 .otp-group {
     animation: fadeIn 1.5s ease-in-out;
 }
 
+/* Animation for fading in elements */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -38,6 +58,19 @@
     }
 }
 
+/* Animation for fading in and moving up */
+@keyframes fadeInUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Input field styling */
 input {
     width: 100%;
     padding: 8px;
@@ -47,12 +80,14 @@ input {
     transition: border 0.3s ease;
 }
 
+/* Focus state for input fields */
 input:focus {
     border-color: #007bff;
     outline: none;
 }
 
-.submit-button {
+/* Button styling */
+.submit-button, .resend-button {
     padding: 10px;
     background-color: #007bff;
     color: white;
@@ -63,16 +98,19 @@ input:focus {
     transition: background-color 0.3s ease;
 }
 
-.submit-button:hover {
+/* Hover state for buttons */
+.submit-button:hover, .resend-button:hover {
     background-color: #0056b3;
 }
 
+/* Error message styling */
 .error-message {
     color: red;
     margin-bottom: 10px;
     animation: shake 0.3s ease-in-out;
 }
 
+/* Animation for shaking error messages */
 @keyframes shake {
     0%, 100% {
         transform: translateX(0);
