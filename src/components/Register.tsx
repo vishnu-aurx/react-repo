@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import './component-css/Register.css'; // Import the CSS file
-import NavBar from './NavBar'; // Import the Navbar component
+import './component-css/Register.css';
+import NavBar from './NavBar';
 
-interface RegisterProps {}
-
-const Register: React.FC<RegisterProps> = () => {
+const Register: React.FC = () => {
   const [name, setName] = useState<string>('');
-  const [phoneNumber, setPhoneNumber] = useState<string>('');
+  const [mobile, setMobile] = useState<string>('');
   const [otp, setOtp] = useState<string>('');
   const [isOtpSent, setIsOtpSent] = useState<boolean>(false);
   const [showResendButton, setShowResendButton] = useState<boolean>(false);
@@ -32,8 +30,8 @@ const Register: React.FC<RegisterProps> = () => {
 
   const handleRegister = async () => {
     try {
-      const response = await axios.post('/api/register', { name, phoneNumber });
-      if (response.data.success) {
+      const response = await axios.post('http://localhost:8080/api/register', { name, mobile });
+      if (response.status === 200) {
         setIsOtpSent(true);
       }
     } catch (error) {
@@ -43,7 +41,7 @@ const Register: React.FC<RegisterProps> = () => {
 
   const handleResendOtp = async () => {
     try {
-      await axios.post('/api/resend-otp', { phoneNumber });
+      await axios.post('http://localhost:8080/api/resend-otp', { mobile });
       setTimer(30); // Reset the timer
       setShowResendButton(false);
     } catch (error) {
@@ -51,49 +49,66 @@ const Register: React.FC<RegisterProps> = () => {
     }
   };
 
+  const handleVerifyOtp = async () => {
+    try {
+      const response = await axios.post('http://localhost:8080/My/controller/SignUpUsingOtp', { mobile, otp });
+      if (response.status === 200) {
+        alert('Registration successful');
+        // Redirect or perform further actions
+      }
+    } catch (error) {
+      console.error('Error verifying OTP:', error);
+    }
+  };
+
   return (
     <div>
-      <NavBar /> {/* Add the Navbar here */}
-      <div className="register-container">
-        <h2 className="register-title">Register</h2>
-        <form className="register-form">
-          <div className="form-group">
-            <label>Name:</label>
-            <input
-              type="text"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-            />
-          </div>
-          <div className="form-group">
-            <label>Phone Number:</label>
-            <input
-              type="text"
-              value={phoneNumber}
-              onChange={(e) => setPhoneNumber(e.target.value)}
-            />
-          </div>
-          <button type="button" className="submit-button" onClick={handleRegister}>
-            Register
-          </button>
-          {isOtpSent && (
-            <div className="otp-group">
-              <div className="form-group">
-                <label>OTP:</label>
-                <input
-                  type="text"
-                  value={otp}
-                  onChange={(e) => setOtp(e.target.value)}
-                />
-              </div>
+      <NavBar />
+      <div className="register-page">
+        <div className="register-container">
+          <h2 className="register-title">Register</h2>
+          <form className="register-form">
+            <div className="form-group">
+              <label>Name:</label>
+              <input
+                type="text"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+              />
             </div>
-          )}
-          {showResendButton && (
-            <button className="resend-button" onClick={handleResendOtp}>
-              Resend OTP
+            <div className="form-group">
+              <label>Phone Number:</label>
+              <input
+                type="text"
+                value={mobile}
+                onChange={(e) => setMobile(e.target.value)}
+              />
+            </div>
+            <button type="button" className="submit-button" onClick={handleRegister}>
+              Register
             </button>
-          )}
-        </form>
+            {isOtpSent && (
+              <div className="otp-group">
+                <div className="form-group">
+                  <label>OTP:</label>
+                  <input
+                    type="text"
+                    value={otp}
+                    onChange={(e) => setOtp(e.target.value)}
+                  />
+                </div>
+                <button type="button" className="submit-button" onClick={handleVerifyOtp}>
+                  Verify OTP
+                </button>
+              </div>
+            )}
+            {showResendButton && (
+              <button className="resend-button" onClick={handleResendOtp}>
+                Resend OTP ({timer}s)
+              </button>
+            )}
+          </form>
+        </div>
       </div>
     </div>
   );

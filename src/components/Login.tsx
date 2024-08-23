@@ -4,7 +4,7 @@ import './LoginWithOTP.css';
 import NavBar from './NavBar';
 
 function LoginWithOTP() {
-    const [username, setUsername] = useState('');
+    const [mobile, setMobile] = useState('');
     const [otp, setOtp] = useState('');
     const [error, setError] = useState('');
     const [otpSent, setOtpSent] = useState(false);
@@ -12,8 +12,8 @@ function LoginWithOTP() {
     const handleRequestOtp = async (e: { preventDefault: () => void; }) => {
         e.preventDefault();
         try {
-            await axios.post('http://192.168.29.47:8080/My/controller/logIn', {
-                username
+            await axios.post('http://localhost:8080/My/controller/logIn', {
+                mobile
             });
             setOtpSent(true);
         } catch (err) {
@@ -24,8 +24,8 @@ function LoginWithOTP() {
     const handleSubmit = async (e: { preventDefault: () => void; }) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:8080/api/auth/login', {
-                username,
+            const response = await axios.post('http://localhost:8080/My/controller/LoginInUsingOtp', {
+                mobile,
                 otp
             });
             localStorage.setItem('token', response.data.token);
@@ -43,11 +43,11 @@ function LoginWithOTP() {
                 onSubmit={otpSent ? handleSubmit : handleRequestOtp}
             >
                 <div className="form-group">
-                    <label>Username</label>
+                    <label>Mobile Number</label>
                     <input
                         type="text"
-                        value={username}
-                        onChange={(e) => setUsername(e.target.value)}
+                        value={mobile}
+                        onChange={(e) => setMobile(e.target.value)}
                     />
                 </div>
                 {otpSent && (
