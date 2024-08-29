@@ -1,15 +1,38 @@
-import React from 'react';
-import { Route, Navigate, RouteProps } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Navigate } from 'react-router-dom';
+import axios from 'axios';
 
-const PrivateRoute = ({ component: Component, ...rest }: { component: React.ComponentType<any> } & RouteProps) => {
-    const isAuthenticated = localStorage.getItem('token') ? true : false;
+interface PrivateRouteProps {
+  children: React.ReactNode;
+}
 
-    return (
-        <Route
-            {...rest}
-            element={isAuthenticated ? <Component /> : <Navigate to="/login" />}
-        />
-    );
+const PrivateRoute: React.FC<PrivateRouteProps> = ({ children }) => {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [token, setToken] = useState<string | null>(null);
+
+  useEffect(() => {
+    const storedToken = localStorage.getItem('token');
+    setToken(storedToken);
+
+    if (storedToken) {
+      axios.post('/validate-token', { token: token })
+        .then(response => {
+          if (response.data.valid) {
+            setIsAuthenticated(true);
+          } else {
+            localStorage.removeItem('token');
+            setIsAuthenticated(false);
+          }
+        })
+        .catch(error => {
+          console.error(error);
+          localStorage.removeItem('token');
+          setIsAuthenticated(false);
+        });
+    }
+  }, []);
+
+  return isAuthenticated ? <>{children}</> : <Navigate to="/login" />;
 };
 
 export default PrivateRoute;

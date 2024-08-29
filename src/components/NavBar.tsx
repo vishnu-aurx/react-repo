@@ -12,7 +12,8 @@ const NavBar: React.FC = () => {
 
     // Determine if the current path is '/login'
     const isLoginPage = location.pathname === '/login';
-
+    const isLogin = location.pathname ==='/dashboard';
+    const isLogOutPage = location.pathname ==='/logout';
     return (
         <nav className="navbar">
             <div className="navbar-brand">MyApp</div>
@@ -33,11 +34,19 @@ const NavBar: React.FC = () => {
                     <button className="nav-button" onClick={() => handleNavigation('/register')}>
                         Register
                     </button>
-                ) : (
-                    <button className="nav-button" onClick={() => handleNavigation('/login')}>
-                        Login
-                    </button>
+                ) : ( isLogin ?( <button className="nav-button" onClick={() => handleNavigation('/logout')}>
+                Logout
+            </button>) :( isLogOutPage ? (
+                    <button className="nav-button" onClick={() => handleNavigation('/register')}>
+                        Register
+                    </button>):(
+                    <button className="nav-button" onClick={() => handleNavigation('/register')}>
+                        Register
+                    </button>))
                 )}
+                
+               
+                
             </div>
         </nav>
     );

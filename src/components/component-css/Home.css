@@ -6,6 +6,7 @@
     justify-content: flex-start; /* Align items from the top */
     height: 100vh;
     margin: 0;
+   
 }
 
 .content {
@@ -16,6 +17,10 @@
     height: 100%; /* Full screen height minus navbar */
     width: 100vw; /* Full screen width */
     margin-top: 60px; /* Offset content from the navbar */
+    background-image: url("C:\Users\VishnuPrasad\Documents\mvn-projects\react-project\react-repo\public\tt.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .register-button {

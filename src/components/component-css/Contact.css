@@ -1,0 +1,81 @@
+/* src/component-css/Contact.css */
+
+.contact-us {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f4f4f4; /* Optional: To give a light background */
+}
+
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 80%;
+    max-width: 1200px;
+    padding: 20px;
+    background-color: white; /* Optional: For better visibility */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-details, .contact-form {
+    width: 48%; /* Adjust as needed */
+    padding: 20px;
+}
+
+.contact-details {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    margin-right: 2%; /* Space between the blocks */
+}
+
+.contact-form {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+}
+
+.contact-details h1, .contact-form h2 {
+    text-align: center;
+}
+
+.contact-info {
+    text-align: center;
+}
+
+.contact-info p {
+    margin: 10px 0;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form label {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.contact-form input, .contact-form textarea {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-top: 5px;
+}
+
+.contact-form button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #0056b3;
+}

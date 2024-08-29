@@ -14,9 +14,11 @@ const Home: React.FC = () => {
         <div className="home-container">
             <NavBar />
             <div className="content">
+                <div className="reg-container">
                 <button className="register-button" onClick={handleRegister}>
                     Register
                 </button>
+                </div>
             </div>
         </div>
     );

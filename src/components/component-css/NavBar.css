@@ -47,6 +47,5 @@
     margin-top: 60px; /* Adjust based on NavBar height */
     padding: 20px;
     background-color: white; /* Background color for content */
-    min-height: 100vh; /* Full height to cover the viewport */
   }
   
