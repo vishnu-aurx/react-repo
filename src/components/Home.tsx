@@ -12,7 +12,7 @@ const Home: React.FC = () => {
 
     return (
         <div className="home-container">
-            <NavBar />
+            {/* <NavBar /> */}
             <div className="content">
                 <div className="reg-container">
                 <button className="register-button" onClick={handleRegister}>

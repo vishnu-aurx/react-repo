@@ -8,7 +8,7 @@ function LoginWithOTP() {
     const [otp, setOtp] = useState('');
     const [error, setError] = useState('');
     const [otpSent, setOtpSent] = useState(false);
-
+    localStorage.setItem('token', "ksjdbfkbfk skdfskdbkfsjbdkf");
     const handleRequestOtp = async (e: { preventDefault: () => void; }) => {
         e.preventDefault();
         try {
@@ -36,7 +36,7 @@ function LoginWithOTP() {
 
     return (
         <div className="login-container">
-             <NavBar />
+             {/* <NavBar /> */}
             <h2 className="login-title">Login</h2>
             <form 
                 className={`login-form ${otpSent ? 'otp-sent' : ''}`} 

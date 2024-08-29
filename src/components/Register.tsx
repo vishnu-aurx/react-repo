@@ -63,7 +63,7 @@ const Register: React.FC = () => {
 
   return (
     <div>
-      <NavBar />
+      {/* <NavBar /> */}
       <div className="register-page">
         <div className="register-container">
           <h2 className="register-title">Register</h2>

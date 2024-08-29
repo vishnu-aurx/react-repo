@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   BrowserRouter as Router,
   Route,
@@ -12,19 +12,33 @@ import Dashboard from "./components/Dashboard";
 import PrivateRoute from "./components/PrivateRoute";
 import Logout from "./components/LogOut";
 import Contact from "./components/Contact";
+import { auth } from "./services/authService";
+import NavBar from "./components/NavBar";
 
 function App() {
-  const isAuthenticated = localStorage.getItem("token") ? true : false;
+  const [isAuthenticated, setIsAuthenticated] = useState<boolean | null>(null);
+  useEffect(() => {
+    auth(setIsAuthenticated);
+  }, []);
   return (
     <Router>
+      <NavBar isAuthenticated={isAuthenticated} />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
+        {!isAuthenticated ? (
+          <Route path="/login" element={<Login />} />
+        ) : (
+          <Route path="/login" element={<Navigate to="/" />} />
+        )}
         <Route path="/register" element={<Register />} />
-        <Route path="/logout" element={<Logout />} />
+        {isAuthenticated ? (
+          <Route path="/logout" element={<Logout />} />
+        ) : (
+          <Route path="*" element={<Navigate to="/login" />} />
+        )}
         <Route path="/contact" element={<Contact />} />
         <Route
-          path="/dashboard"
+          path="/dashboard/*"
           element={
             <PrivateRoute>
               <Dashboard />

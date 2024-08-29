@@ -9,7 +9,7 @@ const Dashboard: React.FC = () => {
             <header className="dashboard-header">
                 <h1>Welcome to the Dashboard</h1>
             </header>
-            <NavBar/>
+            {/* <NavBar/> */}
             <section className="dashboard-content">
                 <div className="dashboard-stats">
                     <div className="stat-card">

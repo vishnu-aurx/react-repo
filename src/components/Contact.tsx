@@ -31,7 +31,7 @@ const Contact: React.FC = () => {
 
     return (
         <div>
-            <NavBar/>
+            {/* <NavBar/> */}
             <div className="contact-us">
           <div className="contact-container">
             <div className="contact-details">
