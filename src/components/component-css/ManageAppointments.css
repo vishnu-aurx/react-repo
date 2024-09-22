@@ -1,0 +1,105 @@
+/* General Styles */
+.manage-appointments-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0 auto;
+  }
+  
+  .appointment-section {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .patient-info, .doctor-info {
+    flex: 1;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+  }
+  
+  h2, h3 {
+    margin-bottom: 15px;
+  }
+  
+  .appointment-details, .doctor-info p {
+    margin-bottom: 10px;
+  }
+  
+  .show-more-button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .show-more-button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Doctor's Profile Styles */
+  .doctor-profile-photo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+  }
+  
+  /* Navigation Buttons */
+  .appointment-navigation {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .appointment-navigation button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    margin: 0 10px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .appointment-navigation button:disabled {
+    background-color: #cccccc;
+  }
+  
+  .appointment-navigation button:hover:not(:disabled) {
+    background-color: #0056b3;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .appointment-section {
+      flex-direction: column;
+    }
+  
+    .doctor-profile-photo {
+      width: 80px;
+      height: 80px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .patient-info, .doctor-info {
+      padding: 10px;
+    }
+  
+    .doctor-profile-photo {
+      width: 60px;
+      height: 60px;
+    }
+  
+    .appointment-navigation button {
+      padding: 8px 16px;
+    }
+  }
+  

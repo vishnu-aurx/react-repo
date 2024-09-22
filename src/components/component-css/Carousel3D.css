@@ -1,0 +1,69 @@
+.carousel-3d-wrapper {
+  position: relative;
+  background: #bcdef0; /* You can use Foundation's background classes if needed */
+}
+
+.carousel-slide {
+  transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.carousel-slide.active {
+  transform: scale(1);
+  filter: blur(0);
+}
+
+.carousel-slide.blurred {
+  transform: scale(0.9);
+  filter: blur(2px);
+}
+
+/* Replace with Foundation's card styling */
+.appointment-card {
+  background-color: #000000; /* You can change this to a Foundation class if necessary */
+  color: #9adced;
+  border-radius: 15px;
+  padding: 1.25rem; /* Equivalent to 20px */
+  text-align: center;
+  box-shadow: 0 6px 20px rgb(69 63 63 / 70%); /* You can use Foundation's shadow classes */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Use Foundation's button styling */
+.show-more-button {
+  margin-top: 0.625rem; /* Equivalent to 10px */
+  padding: 0.5rem 1rem; /* 8px 16px */
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px; /* Foundation's default border-radius can be used here */
+  cursor: pointer;
+  font-size: 0.875rem; /* 14px */
+  transition: background 0.3s ease;
+}
+
+/* Foundation classes for buttons */
+.prev-button,
+.next-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #007bff;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.prev-button {
+  left: 10px;
+}
+
+.next-button {
+  right: 10px;
+}
+
+.prev-button:hover,
+.next-button:hover {
+  color: #0056b3;
+}

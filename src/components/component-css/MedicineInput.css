@@ -1,0 +1,115 @@
+/* General container styles */
+.medicine-input-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+}
+
+/* Flex layout for the form fields */
+.medicine-input-group {
+  margin-bottom: 20px;
+}
+
+.medicine-input-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.medicine-input-field {
+  flex: 1;
+  min-width: 150px;
+}
+
+.medicine-input-field label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.create-report-input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+textarea.create-report-input {
+  height: 80px;
+  resize: vertical;
+}
+
+/* Button styles */
+.add-medicine-button, .remove-medicine-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  transition: background-color 0.3s ease;
+}
+
+.add-medicine-button:hover, .remove-medicine-button:hover {
+  background-color: #0056b3;
+}
+
+.report-submit-button {
+  background-color: #28a745;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.report-submit-button:hover {
+  background-color: #218838;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .medicine-input-row {
+    flex-direction: column;
+  }
+
+  .medicine-input-field {
+    width: 100%;
+    min-width: 100%;
+  }
+
+  .add-medicine-button, .remove-medicine-button {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+@media (max-width: 480px) {
+  .medicine-input-container {
+    padding: 10px;
+  }
+
+  .create-report-input {
+    padding: 6px;
+  }
+
+  .add-medicine-button, .remove-medicine-button {
+    width: 30px;
+    height: 30px;
+  }
+
+  .report-submit-button {
+    width: 100%;
+    padding: 12px;
+  }
+}

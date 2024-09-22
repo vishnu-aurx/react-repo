@@ -1,29 +1,93 @@
 /* src/components/Dashboard.css */
+
 .dashboard {
-    padding: 20px;
+  padding: 20px;
+ 
 }
 
 .dashboard-header {
-    background-color: #282c34;
-    padding: 20px;
-    color: white;
-    text-align: center;
+  background-color: #282c34;
+  padding: 20px;
+  color: white;
+  text-align: center;
 }
 
-
 .dashboard-content {
-    margin-top: 20px;
+  margin-top: 20px;
+  display: flex; /* make the content section flexible */
+  flex-direction: column; /* stack the content vertically by default */
 }
 
 .dashboard-stats {
-    display: flex;
-    justify-content: space-around;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap; /* allow the stat cards to wrap to the next line on smaller screens */
 }
 
 .stat-card {
-    background-color: #f4f4f4;
-    padding: 20px;
-    border-radius: 8px;
-    width: 45%;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #f4f4f4;
+  padding: 20px;
+  border-radius: 8px;
+  width: calc(45% - 20px); /* adjust the width to account for the margin */
+  margin: 10px; /* add some margin to the stat cards */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* add this to prevent the content from showing when the card is closed */
+}
+
+.stat-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.stat-card-header h2 {
+  margin: 0;
+}
+
+.stat-card-content {
+  padding: 20px;
+  display: none; /* hide the content by default */
+}
+
+.stat-card-content.show {
+  display: block; /* show the content when the card is open */
+}
+
+/* add some animations to make the transition smoother */
+
+.stat-card-content {
+  transition: opacity 0.5s;
+}
+
+.stat-card-content.show {
+  opacity: 1;
+}
+
+.stat-card-content.hide {
+  opacity: 0;
+}
+
+/* add some media queries to adjust the layout on smaller screens */
+
+@media (max-width: 768px) {
+  .dashboard-content {
+    flex-direction: column; /* stack the content vertically on smaller screens */
+  }
+  .dashboard-stats {
+    flex-direction: column; /* stack the stat cards vertically on smaller screens */
+  }
+  .stat-card {
+    width: 100%; /* make the stat cards full-width on smaller screens */
+    margin: 10px 0; /* adjust the margin to only be top and bottom */
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard-header {
+    padding: 10px; /* reduce the padding on the header on very small screens */
+  }
+  .stat-card {
+    padding: 10px; /* reduce the padding on the stat cards on very small screens */
+  }
 }

@@ -1,51 +1,109 @@
-/* NavBar.css */
-
+/* Main navbar styles
 .navbar {
-    background-color: #007bff; /* Primary color for NavBar */
-    padding: 10px 20px;
-    color: white;
-    display: flex;
-    justify-content: space-between; /* Space between brand and buttons */
-    align-items: center;
-    width: 100%; /* Full width */
-    box-sizing: border-box; /* Include padding in width calculation */
-    position: fixed; /* Fix the NavBar at the top */
-    top: 0;
-    left: 0;
-    z-index: 1000; /* Ensure it stays on top of other content */
-  }
-  
-  .navbar-brand {
-    font-size: 24px;
-    font-weight: bold;
-  }
-  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  padding: 10px 20px;
+  color: white;
+}
+
+.navbar-brand {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.navbar-actions {
+  display: flex;
+  gap: 15px;
+}
+
+.nav-button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.nav-button:hover {
+  background-color: #45a049;
+}
+
+@media (max-width: 768px) {
   .navbar-actions {
-    display: flex;
-    gap: 15px; /* Space between buttons */
+    flex-direction: column;
+    gap: 10px;
   }
-  
+
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar-brand {
+    margin-bottom: 15px;
+  }
+}
+
+Mobile-first design
+@media (max-width: 480px) {
+  .navbar-brand {
+    font-size: 20px;
+  }
+
   .nav-button {
-    background-color: transparent;
-    color: white;
-    border: 1px solid white;
-    padding: 8px 16px;
-    font-size: 16px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    text-transform: uppercase; /* Capitalize button text */
+    padding: 8px 12px;
+    font-size: 14px;
   }
-  
-  .nav-button:hover {
-    background-color: white;
-    color: #007bff;
+}
+   */
+   
+
+   /* NavBar.css */
+
+/* Logo styling for desktop */
+.logo-desktop {
+  height: 60px;
+  width: auto;
+  margin-left: 1rem;
+}
+
+/* Logo styling for mobile */
+.logo-mobile {
+  height: 40px;
+  width: auto;
+  margin-left: auto; /* Aligns the logo to the right */
+  margin-right: 1rem; /* Adjust as needed for spacing */
+}
+
+/* Ensure top bar is properly aligned */
+.top-bar-center {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* Align logo to the right on mobile */
+@media (max-width: 640px) {
+  .top-bar-center {
+    justify-content: flex-end;
   }
-  
-  /* Content area below NavBar */
-  .content {
-    margin-top: 60px; /* Adjust based on NavBar height */
-    padding: 20px;
-    background-color: white; /* Background color for content */
-  }
-  
+}
+
+.off-canvas {
+  background: #000;
+  color: #fff;
+}
+
+.off-canvas .button.hollow {
+  color: #fff;
+  border-color: #fff;
+}
+
+.off-canvas .button.hollow:hover {
+  background-color: #fff;
+  color: #000;
+}
+

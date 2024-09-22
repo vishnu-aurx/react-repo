@@ -1,0 +1,84 @@
+.game__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+  }
+  
+  .game__drawing-area {
+    position: relative;
+    width: 800px;
+    height: 600px;
+  }
+  
+  .game__canvas {
+    border: 1px solid #ccc;
+    background-color: #ffffff;
+  }
+  
+  .game__controls {
+    margin-top: 10px;
+  }
+  
+  .game__controls label,
+  .game__controls button {
+    margin-right: 10px;
+    padding: 5px;
+    font-size: 16px;
+  }
+  
+  .game__guess-input,
+  .game__draw-button {
+    margin: 10px;
+    padding: 10px;
+    font-size: 16px;
+  }
+  
+  .game__submit-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .game__submit-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .game__guesses-list {
+    margin-top: 20px;
+  }
+  
+  .game__guesses-list ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .game__guesses-list li {
+    padding: 5px 0;
+    font-size: 18px;
+  }
+  
+  .game__draw-button {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .game__draw-button:hover {
+    background-color: #218838;
+  }
+  

@@ -17,10 +17,11 @@
     height: 100%; /* Full screen height minus navbar */
     width: 100vw; /* Full screen width */
     margin-top: 60px; /* Offset content from the navbar */
-    background-image: url("/public/tt.jpg");
-    background-size: cover;
+    /* background-image: url("/public/tt.jpg"); */
+    /* background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; */
+    background-color: none;
 }
 
 .register-button {

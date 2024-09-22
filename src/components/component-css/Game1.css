@@ -1,0 +1,112 @@
+/* .game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    background-color: #282c34; /* Background color for the game area */
+  }
+  
+  .game-inner, .game-setup {
+    background-color: #444; /* Background color for the game */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .game-title {
+    color: #fff;
+    margin-bottom: 20px;
+  }
+  
+  .player-input {
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 2px solid #888;
+    width: 200px;
+  }
+  
+  .btn-start, .btn-restart {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #61dafb; /* Light blue background for button */
+    border: none;
+    border-radius: 5px;
+    color: #333; /* Darker color for button text */
+    transition: background-color 0.2s ease;
+  }
+  
+  .btn-start:hover, .btn-restart:hover {
+    background-color: #21a1f1; /* Darker blue on hover */
+  }
+  
+  .square {
+    width: 100px;
+    height: 100px;
+    background-color: #61dafb; /* Light blue background for squares */
+    border: 2px solid #888; /* Darker border for squares */
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #333; /* Darker color for X and O */
+    transition: background-color 0.2s ease;
+  }
+  
+  .square:hover {
+    background-color: #21a1f1; /* Darker blue on hover */
+  }
+  
+  .board-row {
+    display: flex;
+  }
+  
+  .game-info {
+    margin-top: 20px;
+    color: #fff; /* White text color for status */
+  }
+  
+  .popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .popup-inner {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+  }
+  
+  .popup-inner h2 {
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .popup-inner p {
+    color: #666;
+    margin-bottom: 20px;
+  }
+  .pName {
+    font-size: 36px;
+    color: #ff07ce;
+    text-shadow: 6px 4px 4px rgb(0 0 0);
+    margin: 10px 0;
+    font-weight: bold;
+  }
+   */

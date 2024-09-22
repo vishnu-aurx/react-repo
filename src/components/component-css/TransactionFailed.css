@@ -1,0 +1,26 @@
+.transaction-failed-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    background-color: #f8f8f8;
+  }
+  
+  .emoji {
+    font-size: 100px;
+    margin-bottom: 20px;
+  }
+  
+  .message {
+    font-size: 36px;
+    color: #ff4d4d;
+    margin-bottom: 10px;
+  }
+  
+  .sub-message {
+    font-size: 18px;
+    color: #666;
+  }
+  

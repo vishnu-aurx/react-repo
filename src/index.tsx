@@ -1,8 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import './index.css';
 import axios from 'axios';
+import $ from 'jquery';
+import 'foundation-sites';
+import 'foundation-sites/dist/css/foundation.min.css'; // Import Foundation CSS
+import 'foundation-sites/dist/css/foundation.min.css'; // Import Foundation CSS
+import 'foundation-sites'; // Import Foundation JavaScript
+
 
 axios.interceptors.request.use(
     function (config) {
@@ -27,6 +33,10 @@ axios.interceptors.response.use(
         return Promise.reject(error);
     }
 );
+useEffect(() => {
+    $(document).foundation();
+  }, []);
+  
 
 ReactDOM.render(
     <React.StrictMode>
